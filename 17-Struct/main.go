@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 type Person struct {
 	name, surname string
@@ -20,12 +23,13 @@ type Student struct {
 }
 
 func main() {
-	createPerson()
-	createRectangle()
-	anonymousStruct()
-	anonymousStructFields()
-	pointerStructPractice()
-	usingNewKeyWord()
+	//createPerson()
+	//createRectangle()
+	//anonymousStruct()
+	//anonymousStructFields()
+	//pointerStructPractice()
+	//usingNewKeyWord()
+	reflectionInStructs()
 }
 
 func createPerson() {
@@ -79,4 +83,17 @@ func usingNewKeyWord() {
 	fmt.Println("Surname =", person.surname)
 	fmt.Println("Age =", person.age)
 	fmt.Println("PersonStruct =", person)
+}
+
+func reflectionInStructs() {
+	person := Person{
+		name:    "Baha",
+		surname: "Bayar",
+		age:     23,
+	}
+	t := reflect.TypeOf(person.name)
+	v := reflect.ValueOf(person.age)
+	fmt.Println(t)
+	fmt.Println(v)
+	fmt.Println("person =", reflect.ValueOf(person).Kind())
 }
