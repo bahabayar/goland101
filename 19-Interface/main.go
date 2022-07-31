@@ -50,3 +50,7 @@ func calculateAll(s []shape) {
 		fmt.Println(shp.perimeter())
 	}
 }
+
+func writeThemAll(value interface{}) {
+	fmt.Printf("%T , %v", value, value)
+}
